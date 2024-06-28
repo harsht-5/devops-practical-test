@@ -1,1 +1,3 @@
 node_modules/
+task3/terraform-script/.terraform/*
+task3/terraform-script/.terraform*
