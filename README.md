@@ -16,6 +16,17 @@ npm init -y && npm install express
 
 ## Follow this steps to run application of Task-2
 
+Please note for local system I have used minikube to run kubernetes files
+
+1. Install minikube and start minikube, Once kubenetes node is UP and Running, we can deploy our manifest file.
+2. Deploy manifest file using below command 
+```
+kubectl apply -f k8s-nginx-manifest.yml -n default
+```
+3. You will see pods getting created. Command to see pods `kubectl get pods`
+4. 3 replicas will be created and to check output we can open browser and search with private IP with port number of nodeport defined in manifest file.
+
+
 ## Follow this steps to run application of Task-3
 
 1. Install Ansible as a master node and then edit hosts file located at `/etc/ansible/hosts`
