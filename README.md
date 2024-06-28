@@ -25,6 +25,7 @@ kubectl apply -f k8s-nginx-manifest.yml -n default
 ```
 3. You will see pods getting created. Command to see pods `kubectl get pods`
 4. 3 replicas will be created and to check output we can open browser and search with private IP with port number of nodeport defined in manifest file.
+5. Deployment is created with guaranteed QOS
 
 
 ## Follow this steps to run application of Task-3
