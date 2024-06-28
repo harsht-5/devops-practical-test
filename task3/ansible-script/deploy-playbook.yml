@@ -1,0 +1,19 @@
+- name: Deploy Node.js Application with Docker
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Copy Docker Compose File
+      copy:
+        src: /home/harsh/Documents/devops-exam/devops-practical-test/task3/ansible-script/docker-compose.yml
+        dest: /home/ubuntu/nodejs-ansible-deploy/docker-compose.yml
+      become_user: ubuntu
+
+    - name: Start Docker Compose Container
+      shell: docker-compose -f /home/ubuntu/nodejs-ansible-deploy/docker-compose.yml up -d
+      become_user: ubuntu
+
+    - name: Restarting Nginx after deployment
+      systemd:
+        name: nginx
+        state: restarted
